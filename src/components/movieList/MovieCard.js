@@ -17,7 +17,7 @@ import Rating from './Rating'
 import { formatDate } from '../../utils/dateUtils';
 
 const MovieCard = (props) => {
-  const { movie, changeRating } = props
+  const { movie, deleteMovie, changeRating} = props
   let history = useHistory()
   return (
     <Card>
@@ -41,7 +41,7 @@ const MovieCard = (props) => {
         <Button size ="small" color = "secondary" onClick={() => history.push(`/details/${movie.id}`)}>
           View details
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" onClick={() => deleteMovie(movie)}>
           Delete
         </Button>
       </CardActions>

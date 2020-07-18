@@ -113,6 +113,15 @@ class App extends React.Component {
     localStorage.removeItem("userDetails");
   };
 
+  deleteMovie = (movie) => {
+    const movies = this.state.savedMovies;
+    movies.splice(movies.indexOf(movie), 1);
+    this.setState({
+      savedMovies: movies,
+    });
+  };
+
+
   render() {
     const { savedMovies, user } = this.state;
     return (
@@ -131,6 +140,7 @@ class App extends React.Component {
                     <MovieList
                       savedMovies={savedMovies}
                       changeRating={this.changeRating}
+                      deleteMovie={this.deleteMovie}
                     />
                   </Container>
                 </React.Fragment>

@@ -9,7 +9,7 @@ class MovieList extends React.Component {
       <React.Fragment>
         {this.props.savedMovies.length > 0
           ? this.props.savedMovies.map((item) => (
-              <MovieCard movie={item} changeRating={this.props.changeRating} />
+              <MovieCard movie={item} changeRating={this.props.changeRating} deleteMovie={this.props.deleteMovie} />
             ))
           : 'Search for a movie and add it to your list.'}
       </React.Fragment>
